@@ -53,15 +53,15 @@ func main() {
 	var hostname string = "s3://elasticbeanstalk-ap-southeast-1-017761180421/"
 	start := time.Now()
 	var index int = 1
-	for index <= 6 {
+	for {
 		// url := hostname + string(index)
 		// err, sb := GetResp(url)
 
-		videoPath := hostname + "Video/video_path_" + strconv.Itoa(index)
-		txtPath := hostname + "Data/txt_path_" + strconv.Itoa(index)
+		videoPath := hostname + "Video/video_server_" + strconv.Itoa(index) + ".avi"
+		txtPath := hostname + "Data/dataserver_" + strconv.Itoa(index) + ".txt"
 
-		ExecDownloadCmd(videoPath, "F:\\project\\DATN\\DownloadS3\\S3Download\\Video")
-		ExecDownloadCmd(txtPath, "F:\\project\\DATN\\DownloadS3\\S3Download\\Data")
+		ExecDownloadCmd(videoPath, "F:\\project\\DATN\\DownloadS3\\S3Download\\Video\\")
+		ExecDownloadCmd(txtPath, "F:\\project\\DATN\\DownloadS3\\S3Download\\Data\\")
 
 		index++
 		// if err != nil {
